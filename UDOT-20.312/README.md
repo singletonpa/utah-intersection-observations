@@ -1,5 +1,5 @@
 # UDOT-20.312
-## UT-23.09: Right-turn safety for walking/bicycling: Impacts of curb/corner radii and other factors
+## Right-turn safety for walking/bicycling: Impacts of curb/corner radii and other factors
 This repository contains data and scripts associated with the "Right-turn safety for walking/bicycling: Impacts of curb/corner radii and other factors" research project UDOT-20.312, funded by the Utah Department of Transportation, and carried out by [Patrick Singleton](https://engineering.usu.edu/cee/people/faculty/singleton-patrick), [Michelle Mekker](https://www.linkedin.com/in/michelle-mekker-548804152/), [Alyssa Gaither](https://www.linkedin.com/in/alyssadgaither/), [Atul Subedi](https://www.linkedin.com/in/atulsub/), [Ahadul Islam](https://www.linkedin.com/in/ahadulislam/), and the [Singleton Transportation Lab](https://engineering.usu.edu/cee/research/labs/patrick-singleton/index) at Utah State University.
 * **Objective**
     * To understand factors (especially curb/corner radii) affecting safety at intersections involving right-turning vehicles and pedestrians/bicyclists. 

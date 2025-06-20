@@ -1,0 +1,69 @@
+Notes about data processing, data analysis, and R scripts
+
+1 Data Cleaning/Data Cleaning.R
+-> Before running script, copy old files to archive
+ • Takes raw survey data (CSVs) from “Data/Data from Videos/Checked” folder
+ • Processes columns
+ • Creates wide and long versions
+ • Saves “datwide” and “datlong” (RDS, CSV) files in the main folder
+-> Need to move these 4 files to “1 Data Cleaning”
+
+2 Location Data Assembly/assemble location data.R
+-> Before running script, copy old files to archive
+ • Reads in “New_Videos.xlsx” file from “Data/Data from Videos” folder
+   o This is a table of all videos that were recorded by PAS in 2021-22 school year
+ • Reads in “Signal Corner Info_21.xlsx” file from “Data/Locations” folder
+   o This is a table of the signal corner geometric information collected in Summer 2021
+ • Reads in “intdata.rds” from “Data/Ints” folder
+   o This is a table with average pedestrian volumes and built environment information at signals, collected for “UDOT-19.504 Traffic signal pedestrians II” project
+ • Reads in “Signal Database_Trial.csv” from “Data/Locations” folder
+   o This is a table with information about pedestrian crossings and approaches at signals, collected for the “UDOT-19.316 Ped safety signals” project
+ • Selects relevant information from respective datasets
+ • Merges datasets together
+ • Saves result as “datlocation” (CSV, RDS) files in the main folder
+-> Need to move these 2 files to “2 Location Data Assembly”
+
+3 Combine All Data/combine all data.R
+-> Before running script, copy old files to archive
+ • Loads “datlocation.rds” file from “2 Location Data Assembly” folder
+ • Reads in datwide and datlong files from “1 Data Cleaning” folder
+ • Merges datasets together
+ • Adds traffic signal status information
+   o Reads in functions used to process signal data from “funs.R”
+   o Reads in functions used to get signal status info from “signal_status_funs.R”
+ • Adds weather information
+   o Uses queries to IEMRE (https://mesonet.agron.iastate.edu/iemre/) to get mostly hourly temperature and precipitation. 
+ • Saves results as “datwidecombo” and “datlongcombo” (RDS, CSV) in the main folder
+-> Need to move these 4 files to “3 Combine All Data”
+
+4 Bivariate Analysis/table_desc_corr.R
+-> Before running script, copy old files to archive
+ • Loads “datlongcombo.rds” file from “3 Combine All Data” folder
+ • Filters for encroachment time <= 10 seconds and not missing
+ • Runs “add_vars.R” script to calculate many relevant variables
+   o This script calculates variables used for descriptive statistics, correlation, and regression
+ • Selects level one and level two variables, and selects independent variables
+ • Calculates descriptive statistics for level one and level two variables separately
+ • Creates function to calculate and get correlation test results
+ • Calculates correlations and correlation test results for each dependent variable
+ • Saves results as “table_desc_” {L1,L2} (csv) in the main folder
+ • Saves results as “table_corr_” {1,2,3,4,5,6} (csv) in the main folder
+-> Need to move these 8 files to “4 Bivariate Analysis”
+
+5 Multilevel Models/MLmodels.R
+-> Before running script, copy old files to archive
+ • Loads “datlongcombo.rds” file from “3 Combine All Data” folder
+ • Filters for encroachment time <= 10 seconds and not missing
+ • Runs “add_vars.R” script to calculate many relevant variables
+   o This script calculates variables used for descriptive statistics, correlation, and regression
+ • Selects independent variables
+ • Calculates correlations
+ • Saves results as “mycor_” {1,2} (csv) in this folder
+ • Filters selected independent variables
+ • Estimates multilevel regression models for each of the dependent variables
+   o Estimates intercept-only and random intercept only models
+   o Estimates models trying only one variable at a time
+   o Estimates models with all significant variables, uses backwards elimination
+   o Summarizes and combines models together
+   o Saves data and models as “mods” {1,2,3,4,5,6} (rds) in the main folder
+-> Need to move these 6 files to “5 Multilevel Models”

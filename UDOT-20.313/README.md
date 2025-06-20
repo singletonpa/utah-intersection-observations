@@ -1,5 +1,5 @@
 # UDOT-20.313
-## UT-23.10: Pedestrian traffic signal violations: Safety, design, and operational implications
+## Pedestrian traffic signal violations: Safety, design, and operational implications
 This repository contains data and scripts associated with the "Pedestrian traffic signal violations: Safety, design, and operational implications" research project UDOT-20.313, funded by the Utah Department of Transportation, and carried out by [Patrick Singleton](https://engineering.usu.edu/cee/people/faculty/singleton-patrick), [Michelle Mekker](https://www.linkedin.com/in/michelle-mekker-548804152/), Sadie Boyer, and the [Singleton Transportation Lab](https://engineering.usu.edu/cee/research/labs/patrick-singleton/index) at Utah State University.
 * **Objective**
     * To improve pedestrian safety at signalized intersections by focusing on pedestrian signal violations: measuring behaviors, associating characteristics and locations, and identifying potential mitigation strategies. 

@@ -1,0 +1,29 @@
+Description of files in Data folder
+
+Data Collection 1
+* columns.xlsx
+  - Names and descriptions of columns in the original dataset. 
+* combine_data.R
+  - Combines cleaned data for Data Collection 1. 
+  - Inputs: (multiple files, not provided)
+  - Script: Loads and merges data. Removes unnecessary rows. Formats wide dataset. Checks for errors or missing data in wide dataset. Reshapes wide to long. Formats long dataset. Checks for errors or missing data in long dataset. Saves files. 
+  - Outputs: datlong (rds/csv), datwide (rds/csv)
+
+Data Collection 2
+* datlongcombo (rds/csv)
+  - Data from project UDOT-20.312 "Right-turn safety for walking/bicycling: Impacts of curb/corner radii and other factors"
+* studylocs_RT.csv
+  - Information about location and near/far side transit stops for sites in Data Collection 2. 
+* add_vars.R
+  - Data processing script, called from within clean_RT.R
+* clean_RT.R
+  - Processes data for Data Collection 2. 
+  - Inputs: datlongcombo.rds
+  - Script: Loads data. Processes variables by calling add_vars.R script. Inspects and selects variables. Saves files. 
+  - Outputs: df_RT (rds/csv)
+
+Data Collection 3
+* dat04 (rds/csv)
+  - Data from project UDOT-20.313 "Pedestrian traffic signal violations: Safety, design, and operational implications"
+* studylocs_PV.csv
+  - Information about location and near/far side transit stops for sites in Data Collection 3. 

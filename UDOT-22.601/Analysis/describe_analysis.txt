@@ -1,0 +1,33 @@
+Description of files in Analysis folder
+
+Data Collection 1
+* descriptive_stats.R
+  - Calculates descriptive statistics for Data Collection 1. 
+  - Inputs: columns.xlsx, datwide.rds, datlong.rds
+  - Script: Calculates sample size, mean, standard deviation, frequency, and percentage for variables in datwide and datlong. 
+  - Outputs: datwide.csv, datlong.csv
+* bivariate_analysis.R
+  - Performs bivariate analysis for Data Collection 1. 
+  - Inputs: datwide.rds, datlong.rds
+  - Script: Prepares variables. Function for doing Fisher and t tests. Performs bivariate analyses. 
+  - Outputs: bivariate_results.csv
+* Resuts.xlsx
+  - Formats tables for descriptive statistics and bivariate analysis results. 
+
+Data Collection 2
+* analyze_rightturn.R
+  - Calculates descriptive statistics and performs bivariate analysis for Data Collection 2. 
+  - Inputs: df_RT.rds, studylocs_RT.csv
+  - Script: Processes data. Calculates descriptive statistics. Performs bivariate analyses. 
+  - Outputs: desc_stat_RT.csv, bivariate_results_RT.csv
+* Results_RT.xlsx
+  - Formats tables for descriptive statistics and bivariate analysis results. 
+
+Data Collection 3
+* analyze_pedviol.R
+  - Calculates descriptive statistics and performs bivariate analysis for Data Collection 3. 
+  - Inputs: dat04.rds, studylocs_PV.csv
+  - Script: Processes data. Calculates descriptive statistics. Performs bivariate analyses. 
+  - Outputs: desc_stat_PV.csv, bivariate_results_PV.csv
+* Results_PV.xlsx
+  - Formats tables for descriptive statistics and bivariate analysis results. 

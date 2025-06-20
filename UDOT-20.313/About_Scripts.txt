@@ -1,0 +1,31 @@
+About Data Preparation & Analysis Process
+
+01_Merge_Raw_Data.R
+ • Load all raw survey responses
+ • Combine into one common dataset
+ • Save as dat01.rds/csv
+
+02_Process_Columns.R
+ • Process columns (name, format, etc.)
+ • Do checks of data quality
+ • Save as dat02.rds/csv
+
+03_Add_Time_Weather_Location.R
+ • Add temporal variables
+ • Add hourly weather data from IEMRE (Iowa State)
+ • Add crossing and signal location data (manual, processed)
+ • Save as dat03.rds/csv
+
+04_Add_Signal_Status.R
+ • Shift time stamps by a few seconds if needed
+ • Contains function to get signal status (uses funs.R)
+ • Add ped signal status and vehicle signal status
+ • Do checks of signal data quality
+ • Save as dat04.rds/csv
+
+05_Describe_Analyze.R
+ • Calculate new dependent and independent variables
+ • Calculate descriptive statistics for tables and figures
+ • Perform statistical analyses: bivariate and multivariate multilevel regression models
+ • Save results as mods[SDV/TDV].rds
+ • Copy and format results as Results.xlsx
